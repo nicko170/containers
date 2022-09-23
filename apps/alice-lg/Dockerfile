@@ -24,7 +24,7 @@ RUN yarn install
 # Build frontend
 RUN DISABLE_LOGGING=1 NODE_ENV=production /usr/local/bin/gulp
 
-FROM golang:1.17 AS backend
+FROM golang:1.19 AS backend
 
 RUN mkdir -p /src/alice-lg
 WORKDIR /src/alice-lg
