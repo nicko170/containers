@@ -18,7 +18,6 @@ WORKDIR /src/alice-lg/client
 
 
 RUN npm install -g gulp@4.0.0
-RUN npm install -g gulp-cli
 RUN yarn install
 
 # Build frontend
