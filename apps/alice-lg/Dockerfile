@@ -35,13 +35,15 @@ RUN go mod download
 WORKDIR /src/alice-lg/cmd/alice-lg
 RUN make alpine
 
-FROM alpine:latest
+FROM ghcr.io/nicko170/alpine:rolling
 
-RUN apk add -U tzdata
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-COPY --from=backend /src/alice-lg/cmd/alice-lg/alice-lg-linux-amd64 /usr/bin/alice-lg
-RUN mkdir /etc/alice-lg
-COPY ./apps/alice-lg/alice.conf /etc/alice-lg/alice.conf
+COPY --from=backend /src/alice-lg/cmd/alice-lg/alice-lg-linux-amd64 /app/alice-lg
 
-EXPOSE 7340:7340
-CMD ["/usr/bin/alice-lg"]
+USER user
+COPY ./apps/alice-lg/alice.conf /config/alice.conf
+COPY ./apps/alice-lg/entrypoint.sh /entrypoint.sh
+CMD ["/entrypoint.sh"]
+
+LABEL org.opencontainers.image.source="https://github.com/alice-lg/alice-lg"
