@@ -41,7 +41,7 @@ RUN apk add -U tzdata
 
 COPY --from=backend /src/alice-lg/cmd/alice-lg/alice-lg-linux-amd64 /usr/bin/alice-lg
 RUN mkdir /etc/alice-lg
-COPY --from=backend /src/alice-lg/etc/alice-lg/alice.example.conf /etc/alice-lg/alice.conf
+ADD alice.conf /etc/alice-lg/alice.conf
 
 EXPOSE 7340:7340
 CMD ["/usr/bin/alice-lg"]
