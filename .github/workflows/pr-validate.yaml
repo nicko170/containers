@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   pr-metadata:
-    uses: onedr0p/containers/.github/workflows/pr-metadata.yaml@main
+    uses: nicko170/containers/.github/workflows/pr-metadata.yaml@main
 
   generate-build-matrix:
     name: Generate matrix for building images
@@ -49,7 +49,7 @@ jobs:
           echo "::set-output name=changes::${output}"
 
   images-build:
-    uses: onedr0p/containers/.github/workflows/action-image-build.yaml@main
+    uses: nicko170/containers/.github/workflows/action-image-build.yaml@main
     needs:
       - generate-build-matrix
     with:
