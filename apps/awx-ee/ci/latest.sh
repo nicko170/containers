@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-printf "%s" "1.0.0"
+printf "%s" "1.1.0"
