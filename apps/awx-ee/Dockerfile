@@ -6,7 +6,7 @@ ARG CHANNEL
 
 USER root
 
-RUN pip install arouteserver==1.1.0 && curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+RUN pip install arouteserver==1.1.0 && curl -sSL https://install.python-poetry.org | python3 -
 
 ENV PATH "$HOME/.local/bin/:$HOME/.poetry/bin:$PATH"
 

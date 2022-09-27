@@ -1,16 +1,21 @@
 ---
-# https://github.com/aelsabbahy/goss/blob/master/docs/manual.md#process
-process:
-  alice-lg:
-    running: true
+# https://github.com/aelsabbahy/goss/blob/master/docs/manual.md#file
+file:
+  /usr/bin/bgpq3:
+    exists: true
+  /usr/bin/bgpq4:
+    exists: true
 
-# https://github.com/aelsabbahy/goss/blob/master/docs/manual.md#port
-port:
-  # https://github.com/aelsabbahy/goss/issues/149
-  tcp6:7340:
-    listening: true
+# https://github.com/aelsabbahy/goss/blob/master/docs/manual.md#command
+command:
+  bgpq3:
+    exec: /usr/bin/bgpq3
+    exit-status: 1
+    stdout:
+      - "bgpq3 version: 0.1.36.1"
 
-# https://github.com/aelsabbahy/goss/blob/master/docs/manual.md#http
-http:
-  http://localhost:7340:
-    status: 200
+  bgpq4:
+    exec: /usr/bin/bgpq4
+    exit-status: 1
+    stdout:
+      - "bgpq4 version: 1.6"
