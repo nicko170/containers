@@ -24,6 +24,6 @@ command:
 
   arouteserver:
     exec: /usr/local/bin/arouteserver -h
-    exit-status: 0
+    exit-status: 1
     stdout:
-      - "ARouterServer v1.17.0"
+      - "ARouterServer"
