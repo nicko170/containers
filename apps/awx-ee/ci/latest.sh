@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-printf "%s" "1.1.0"
+version="$(curl -sX GET "https://api.github.com/repos/pierky/arouteserver/releases/latest" | jq --raw-output '.tag_name')"
+version="${version#*v}"
+version="${version#*release-}"
+printf "%s" "${version}"
