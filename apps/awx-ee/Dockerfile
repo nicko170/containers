@@ -6,7 +6,7 @@ ARG CHANNEL
 
 USER root
 
-RUN pip install arouteserver==$VERSION
+RUN pip install envs arouteserver==$VERSION
 
 ENV PATH "$HOME/.local/bin/:$HOME/.poetry/bin:$PATH"
 
