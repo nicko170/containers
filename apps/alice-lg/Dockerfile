@@ -1,5 +1,5 @@
 # Build frontend first
-FROM node:11 AS frontend
+FROM node:19 AS frontend
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 ARG VERSION
