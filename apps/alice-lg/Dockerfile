@@ -35,7 +35,7 @@ RUN go mod download
 WORKDIR /src/alice-lg/cmd/alice-lg
 RUN make alpine
 
-FROM ghcr.io/nicko170/alpine:3.16.2
+FROM ghcr.io/nicko170/alpine:3.16.3
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
